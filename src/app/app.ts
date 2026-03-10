@@ -8,5 +8,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  title = 'my-app';
+  title = 'my-app'; 
+  fullName = ' Doan Tronng Duong';
+  age = 19;
+
+  handleClick() {
+  alert("Bạn đã click button");
+}
+
+
 }
