@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './contact.css',
 })
 export class Contact {
+  email='example123@gmail.com'
   
 }

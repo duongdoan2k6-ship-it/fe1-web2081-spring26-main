@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './about.css',
 })
 export class About {
-title = 'Đây là trang giới thiệu';
+title = 'DoanTrongDuong';
 
 }
