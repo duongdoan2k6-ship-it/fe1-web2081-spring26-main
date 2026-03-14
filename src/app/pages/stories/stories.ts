@@ -31,4 +31,7 @@ export class Stories {
     },
     
   ];
+  handleStory(title: string) {
+  alert("Truyen:"+ title)
+}
 }

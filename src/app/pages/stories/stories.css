@@ -7,22 +7,22 @@
   margin: 20px 0;
   padding: 20px 0;
 } */
- .story-table {
-  border-collapse: collapse;
-  width: 100%;
+.story-table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
 .story-table th,
 .story-table td {
-  border: 1px solid black;
-  padding: 8px;
+    border: 1px solid black;
+    padding: 8px;
 }
 
 .story-table th {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .story-image {
-  width: 50px;
-  height: 50px;
-}   
+    width: 50px;
+    height: 50px;
+}

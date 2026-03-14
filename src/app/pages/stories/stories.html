@@ -5,21 +5,27 @@
 <table class="story-table" [border]="1" [cellSpacing]="10">
     <thead>
         <tr>
+            <th>STT</th>
             <th>Tiêu đề</th>
             <th>Năm sản xuất</th>
             <th>Thể loại</th>
             <th>Hình ảnh</th>
             <th>Lượt xem</th>
+            <th>Hành động</th>
         </tr>
     </thead>
     <tbody>
-        @for (story of stories; track story.title; let i = $index) {
+        @for (story of stories; track story.title; let i=$index) {
         <tr>
+            <td>{{ i + 1 }}</td>
             <td>{{ story.title }}</td>
             <td>{{ story.year }}</td>
             <td>{{ story.category }}</td>
             <td><img [src]="story.image" [alt]="story.title" class="story-image"></td>
             <td>{{ story.views }}</td>
+            <td>
+                <button (click)="handleStory(story.title)">Clickme</button>
+            </td>
         </tr>
 
         <!-- <div class="story-card">
