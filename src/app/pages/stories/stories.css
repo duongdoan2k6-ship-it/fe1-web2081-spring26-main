@@ -1,0 +1,17 @@
+/* .story-card {
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 20px 0;
+} */
+ .story-table{
+    width: 100%;
+    border-collapse: collapse;
+ }
+.story-image {
+  width: 50px;
+  height: 50px;
+}   

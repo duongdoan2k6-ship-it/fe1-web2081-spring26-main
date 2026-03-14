@@ -1,0 +1,39 @@
+<h2> Danh sách truyện </h2>
+@if(stories.length === 0) {
+<p>Không có truyện nào</p>
+}
+<table class="story-table" [border]="1" [cellSpacing]="10">
+    <thead>
+        <tr>
+            <th>Tiêu đề</th>
+            <th>Năm sản xuất</th>
+            <th>Thể loại</th>
+            <th>Hình ảnh</th>
+            <th>Lượt xem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (story of stories; track story.title; let i = $index) {
+        <tr>
+            <td>{{ story.title }}</td>
+            <td>{{ story.year }}</td>
+            <td>{{ story.category }}</td>
+            <td><img [src]="story.image" [alt]="story.title" class="story-image"></td>
+            <td>{{ story.views }}</td>
+        </tr>
+
+        <!-- <div class="story-card">
+  <p>{{ story.title }}</p>
+  <p>Năm sản xuất: {{ story.year }}</p>
+  <p>Thể loại: {{ story.category }}</p>
+  <img [src]="story.image" [alt]="story.title" class="story-image">
+  <p>Lượt xem: {{ story.views }}</p>
+    @if (story.views > 80000) {
+  <p>🔥 HOT</p>
+  } 
+  
+  </div> -->
+        }
+
+    </tbody>
+</table>
