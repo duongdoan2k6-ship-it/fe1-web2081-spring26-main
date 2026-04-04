@@ -1,0 +1,20 @@
+{
+  "stories": [
+    {
+      "title": "naruto ",
+      "id": 1
+    },
+    {
+      "title": "Shelock home",
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "email": "abc123@gmail.com",
+      "password": "$2a$10$TtvNy96rNEReHTqliwQA2.XfXRnOLTQ9nK5Cv8R8VZvwWSo/NKUG2",
+      "username": "bc",
+      "id": 1
+    }
+  ]
+}
