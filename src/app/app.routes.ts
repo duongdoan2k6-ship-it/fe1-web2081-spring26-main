@@ -4,9 +4,14 @@ import { AddStory } from './pages/add-story/add-story';
 import { EditStory } from './pages/edit-story/edit-story';
 import { Register } from './pages/register/register';
 import { Login } from './pages/login/login';
-
+import { guestOnlyGuard } from './guards/guest-only.guard';
 
 export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'stories',
+    pathMatch: 'full',
+  },
   {
     path: 'stories',
     component: Stories,
@@ -15,17 +20,17 @@ export const routes: Routes = [
     path: 'add-story',
     component: AddStory,
   },
-
   {
     path: 'edit/:id',
     component: EditStory,
   },
   {
-    path:'register',
-    component:Register
+    path: 'register',
+    component: Register,
   },
-   {
-    path:'login',
-    component:Login
-  }
+  {
+    path: 'login',
+    component: Login,
+    canActivate: [guestOnlyGuard],
+  },
 ];

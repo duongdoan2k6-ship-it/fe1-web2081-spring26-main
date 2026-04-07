@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-story',
@@ -17,6 +17,7 @@ export class EditStory {
     private route: ActivatedRoute,
     private http: HttpClient,
     private fb: FormBuilder,
+    private router: Router
   ) {
     this.id = this.route.snapshot.paramMap.get('id');
     console.log('ID', this.id);
@@ -41,6 +42,7 @@ export class EditStory {
     this.http.put(`http://localhost:3000/stories/${this.id}`, this.editForm.value).subscribe({
       next: () => {
         alert('Story updated successfully!');
+        this.router.navigate(['/stories']);
       },
       error: () => {
         alert('Failed to update story!');

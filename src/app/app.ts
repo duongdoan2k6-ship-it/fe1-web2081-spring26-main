@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+
+type UserInfo = {
+  email?: string;
+  username?: string;
+  name?: string;
+};
 
 @Component({
   selector: 'app-root',
@@ -8,12 +14,29 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  title = 'my-app';
-  fullName = 'hoadv21';
-  age: number = 10;
+  constructor(private router: Router) {}
 
-  sayHello() {
-    console.log('hello ');
-    alert('hello ' + this.fullName);
+  get isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
+  get currentUserName(): string {
+    const userRaw = localStorage.getItem('user');
+    if (!userRaw) {
+      return '';
+    }
+
+    try {
+      const user: UserInfo = JSON.parse(userRaw);
+      return user.username || user.name || user.email || '';
+    } catch {
+      return '';
+    }
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('/login');
   }
 }
